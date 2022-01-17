@@ -1,0 +1,9 @@
+Asignación de tareas
+
+Miembros del equipo
+	Álvaro Jiménez Calleja
+	Aitor Trillo Fernández --> Lider
+
+Creación del repositorio "trabajo_docker"
+	Aitor 
+	Álvaro
