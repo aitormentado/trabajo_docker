@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El último Café</title>
+    <link rel="stylesheet" href="../estilos/estiloGeneral.css">
+    <link rel="stylesheet" href="../estilos/estiloTab.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/e72f071601.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header></header>
+    <div class="cafeteria">
+        <h1>El último</h1>
+        <span>Café</span>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="../inicio.html">Inicio</a>
+                <ul>
+                    <li>Cafetería</li>
+                    <li>Localización</li>
+                    <li>Productos</li>
+                </ul>
+            </li>
+            <li>
+                <a href="../paginas/indexTab.html">Bebidas</a>
+                <ul>
+                    <li>Café</li>
+                    <li>Té</li>
+                    <li>Batidos</li>
+                    <li>Refrescos</li>
+                </ul>
+            </li>
+            <li>Repostería
+                <ul>
+                    <li>Dulce</li>
+                    <li>Salado</li>
+                    <li>Artesanal</li>
+                </ul>
+            </li>
+            <li><a href="../paginas/indexForm.html">Contacto</a>
+                <ul>
+                    <li>Conócenos</li>
+                    <li>Pedidos</li>
+                    <li>Sugerencias</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <h2>Carta de Bebidas</h2>
+    <div class="contenedor">
+        <input class="radio" id="cafe" name="carta" type="radio" checked>
+        <input class="radio" id="te" name="carta" type="radio">
+        <input class="radio" id="batido" name="carta" type="radio">
+        <input class="radio" id="refresco" name="carta" type="radio">
+        <div class="pestanias">
+            <label class="pestania" id="cafe-pest" for="cafe"><i class="fas fa-coffee"></i> Cafés</label>
+            <label class="pestania" id="te-pest" for="te"><i class="fas fa-mug-hot"></i> Tés</label>
+            <label class="pestania" id="batido-pest" for="batido"><i class="fas fa-glass-whiskey"></i> Batidos</label>
+            <label class="pestania" id="refresco-pest" for="refresco"><i class="fas fa-cocktail"></i> Refrescos</label>
+        </div>
+        <div class="contenido">
+            <div class="carta" id="cafe-carta">
+
+                <h3 class="titulo">Espresso</h3>
+                <div class="imagen"></div>
+                <p>Se trata de un café negro fuerte logrado a través del agua hirviendo a alta presión que atraviesa los granos de café. Un expresso perfectamente preparado tendrá una crema espesa. De todos los tipos de café es el de más rápida preparación</p>
+
+                <h3 class="titulo">Capuccino</h3>
+                <div class="imagen"></div>
+                <p>Un verdadero capuchino es una combinación de partes iguales de expresso, leche caliente y espuma de leche. Esta bebida de lujo, si se hace correctamente, puede funcionar incluso como un postre por sus sabores variados y su riqueza.</p>
+
+
+                <h3 class="titulo">Café Moca</h3>
+                <div class="imagen"></div>
+                <p>Se trata de un capuchino o un café con leche con sirope de chocolate caliente o añadidos. Puede haber grandes variaciones en la manera de prepararlo, así que pregunte a su casa de café cómo lo hacen antes de pedir uno.</p>
+
+
+            </div>
+            <div class="carta" id="te-carta">
+
+                <h3 class="titulo">Té Verde</h3>
+                <div class="imagen"></div>
+                <p>Se emplean hojas de te procesadas de forma moderada y en infusión, está lleno de nutrientes, posee menos cafeína que el té negro y su origen está en la antigua China.</p>
+
+                <h3 class="titulo">Té Blanco</h3>
+                <div class="imagen"></div>
+                <p>Está compuesto por hojas y brotes de té muy poco procesados y que se preparan en infusión, tiene menos cafeína que el té negro y su origen está en China hacia el siglo XVIII. Su nombre procede de la parte inferior blanquecina de las hojas
+                    de té.</p>
+
+
+                <h3 class="titulo">Té de Menta</h3>
+                <div class="imagen"></div>
+                <p>Las hojas de menta se toman en infusión, es un viejo remedio digestivo que no tiene cafeína y su origen se encuentra en la antigua Grecia.</p>
+
+            </div>
+            <div class="carta" id="batido-carta">
+
+                <h3 class="titulo">Mango</h3>
+                <div class="imagen"></div>
+                <p>Esta deliciosa fruta, con puro sabor tropical, es perfecta para preparar batidos y smoothies frescos, aromáticos y muy sabrosos, con el dulzor natural de su jugosa pulpa.</p>
+
+                <h3 class="titulo">Manzana</h3>
+                <div class="imagen"></div>
+                <p>En los meses ya más frescos tenemos cada vez más variedad de manzanas de temporada mucho más sabrosas, y pueden dar mucho juego combinándolas en batidos.</p>
+
+
+                <h3 class="titulo">Frutos Rojos</h3>
+                <div class="imagen"></div>
+                <p>Son una bomba de sabor y nutrientes, perfectos para echar directamente al vaso de la batidora y disfrutar de batidos deliciosos.</p>
+
+            </div>
+            <div class="carta" id="refresco-carta">
+
+                <h3 class="titulo">Limonada</h3>
+                <div class="imagen"></div>
+                <p>Esta limonada, casera y natural, es una bebida de elaboración a base de limón, agua y azúcar, que puede tener o no contenido alcohólico. </p>
+
+                <h3 class="titulo">Té Helado</h3>
+                <div class="imagen"></div>
+                <p>El té helado consiste en una forma helada de té, servida a menudo en un vaso con hielo. Diferentes sabores a elegir: limón, mango, piña.</p>
+
+
+                <h3 class="titulo">Zumo de Frutas</h3>
+                <div class="imagen"></div>
+                <p>La mejor forma de disfrutar de la fruta es al natural, entera y preferiblemente con piel. Diferentes sabores a elegir: manzana, naranja, tomate, multifrutas</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

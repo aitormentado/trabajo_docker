@@ -1,0 +1,203 @@
+/* es un div que contiene todo lo que hay bajo el nav */
+
+.explicacion {
+    width: 100%;
+    height: 850px;
+    position: relative;
+    background-size: cover;
+    background-image: url("../images/fondo4.jpg");
+}
+
+
+/* el div que contiene la información sobre la web*/
+
+.texto-explicacion {
+    width: 400px;
+    height: 400px;
+    border: solid 2px black;
+    border-radius: 4px;
+    margin: auto;
+    position: relative;
+    top: calc(50% - 200px);
+    padding: 14px;
+    background-image: url("../images/fondo2.jpg");
+    background-size: cover;
+    text-align: justify;
+    box-shadow: 0px 0px 80px 30px rgba(0, 0, 0, 0.75);
+    letter-spacing: 1px;
+}
+
+
+/* corazon en css */
+
+.texto-explicacion::before,
+.texto-explicacion::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 180px;
+    background-color: var(--color3);
+    border-radius: 100px 100px 0 0;
+    transform: rotate(-45deg);
+    left: 340px;
+    top: -130px;
+}
+
+.texto-explicacion::after {
+    transform: rotate(45deg);
+    left: 382px;
+}
+
+.texto-explicacion h4 {
+    font-size: 1.1em;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.texto-explicacion h4+span {
+    color: rgb(95, 95, 95);
+}
+
+.texto-explicacion p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.texto-explicacion span:nth-child(4) {
+    margin-top: 10px;
+    margin-left: 20%;
+    position: absolute;
+    border-bottom: var(--color2) solid 2px;
+}
+
+.texto-explicacion span:nth-child(5) {
+    color: rgb(95, 95, 95);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.texto-explicacion b {
+    border-bottom: var(--color3) solid 2px;
+}
+
+
+/* son 3 divs que están dentro del contenido bajo el nav (.explicacion)
+Los 3 tienen una imagen de fondo, con la propiedad clip-path los "recorté" */
+
+.bola1,
+.bola2,
+.bola3 {
+    background-color: var(--color2);
+    clip-path: circle(50% at 50% 50%);
+    background-size: cover;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+}
+
+.bola1 {
+    background-image: url("../images/bola2.jpg");
+    top: 50px;
+    left: 12%;
+}
+
+.bola2 {
+    background-image: url("../images/bola.jpg");
+    top: 350px;
+    right: 10%;
+}
+
+.bola3 {
+    background-image: url("../images/bola3.jpg");
+    top: 500px;
+    left: 10%;
+}
+
+
+/* Tratando de que sea responsive
+No hay gran cosa que ver aquí, cambio tamaños de los elementos
+ y los posiciono para que encajen
+ Lo unico algo destacable es el media de 750px:
+ modifico nav para que encaje con el background de .explicacion (div contenedor)
+ y muevo algo más de lo habitual los elementos */
+
+@media(max-width: 1300px) and (min-width: 1000px) {
+    .bola1,
+    .bola2,
+    .bola3 {
+        background-color: var(--color2);
+        clip-path: circle(50% at 50% 50%);
+        background-size: cover;
+        position: absolute;
+        width: 250px;
+        height: 250px;
+    }
+    .bola1 {
+        left: 6%;
+    }
+    .bola2 {
+        right: 3%;
+    }
+    .bola3 {
+        left: 3%;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 750px) {
+    .bola1,
+    .bola2,
+    .bola3 {
+        background-color: var(--color2);
+        clip-path: circle(50% at 50% 50%);
+        background-size: cover;
+        position: absolute;
+        width: 150px;
+        height: 150px;
+    }
+    .bola1 {
+        left: 3%;
+    }
+    .bola2 {
+        right: 1%;
+    }
+    .bola3 {
+        left: 1%;
+    }
+}
+
+@media (max-width: 750px) {
+    .bola1,
+    .bola2,
+    .bola3 {
+        background-color: var(--color2);
+        clip-path: circle(50% at 50% 50%);
+        background-size: cover;
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        top: 20px;
+    }
+    .bola1 {
+        left: 5%;
+    }
+    .bola2 {
+        left: 35%;
+    }
+    .bola3 {
+        left: 65%;
+    }
+    .texto-explicacion::before,
+    .texto-explicacion::after {
+        width: 60px;
+        height: 90px;
+        left: calc(50% - 45px);
+        top: 410px;
+    }
+    .texto-explicacion::after {
+        left: calc(50% - 22px);
+    }
+    nav {
+        margin-bottom: 30px;
+    }
+}

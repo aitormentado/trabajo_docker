@@ -1,0 +1,255 @@
+@font-face {
+    font-family: fuente-titulo;
+    src: url("../fonts/DancingScript-Regular.ttf");
+}
+
+@font-face {
+    font-family: fuente-texto;
+    src: url("../fonts/Ubuntu-LightItalic.ttf");
+}
+
+
+/* Para este trabajo intenté aplicar las variables de css para los colores,
+ aunque en algún momento utilizo white o black en alguna propiedad */
+
+ :root {
+    --fondo2: rgb(182, 150, 82);
+    --fondo1: rgb(241, 156, 77);
+    --fondo3: rgb(53, 53, 53);
+    --color1: rgb(197, 135, 0);
+    --color2: rgb(221, 169, 37);
+    --color3: rgb(252, 215, 10);
+    --color4: rgb(243, 202, 113);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: fuente-texto;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #252525 0%, var(--color1) 30%, var(--color1) 70%, #252525 100%);
+}
+
+
+/* El header de la página, hay una imagen de fondo, tiene un ligero 
+sombreado blanco simulando azúcar? en mi mente es azúcar */
+
+header {
+    border-radius: 0 0 10px 10px;
+    width: 1000px;
+    height: 400px;
+    margin: auto;
+    background-image: url("../images/prueba.jpg");
+    background-size: cover;
+    box-shadow: 0px 0px 80px 30px rgba(255, 255, 255, 0.75);
+    border: solid 3px var(--fondo3);
+    margin-top: -2px;
+}
+
+
+/* Este div es el contenedor del nombre de la cafeteria
+h1 y span están dentro de él */
+
+.cafeteria {
+    margin: auto;
+    height: 100px;
+    position: relative;
+    user-select: none;
+}
+
+.cafeteria h1 {
+    font-family: fuente-titulo;
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    left: calc(50% - 200px);
+    text-align: center;
+    font-size: 3em;
+    z-index: 1;
+    text-shadow: 4px 4px 2px rgba(233, 193, 118, 0.6);
+}
+
+.cafeteria h1+span {
+    font-family: fuente-titulo;
+    position: relative;
+    width: 200px;
+    height: 60px;
+    top: 0px;
+    line-height: 60px;
+    left: calc(50% - 200px);
+    text-align: center;
+    font-size: 9em;
+    margin-left: -60px;
+    color: var(--color3);
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.6);
+}
+
+.cafeteria h1::before,
+.cafeteria h1::after {
+    border-radius: 2px;
+    content: "";
+    position: absolute;
+    height: 10px;
+    bottom: 0;
+}
+
+.cafeteria h1::before {
+    background-color: var(--color3);
+    width: 140px;
+    left: -30px;
+    margin-bottom: -10px;
+}
+
+.cafeteria h1::after {
+    background-color: var(--color1);
+    width: 130px;
+    left: -10px;
+    top: -12px;
+    margin-top: -3px;
+}
+
+.cafeteria h1+span::before {
+    content: "";
+    background-color: var(--fondo3);
+    position: absolute;
+    height: 10px;
+    bottom: 0;
+    width: 280px;
+    left: -30px;
+    margin-bottom: -20px;
+    border-radius: 2px;
+}
+
+
+/* Menú desplegable del nav, lo hice inline-block 
+para poder añadir un tamaño fijo a los li */
+
+nav {
+    width: 100%;
+    height: 60px;
+    background-color: rgb(243, 202, 113);
+    margin-top: 60px;
+    border-bottom: 8px solid var(--fondo3);
+    user-select: none;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 -7px 0 0;
+    padding: 15px 40px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: rgb(243, 202, 113);
+    border-bottom: 8px solid var(--fondo3);
+    color: black;
+    width: 200px;
+    height: 60px;
+    line-height: 30px;
+    text-align: center;
+    left: calc(50% - 400px);
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+ul li a {
+    color: black;
+    width: 200px;
+    height: 60px;
+}
+
+ul li ul {
+    position: absolute;
+    z-index: 1;
+    top: 60px;
+    left: 310px;
+    width: 180px;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+}
+
+ul li ul li {
+    margin: 0;
+    background-color: var(--color4);
+    display: block;
+    border: none;
+    font-size: 0.9em;
+}
+
+ul li:hover,
+ul li:hover a {
+    background-color: var(--color3);
+    color: rgb(255, 255, 255);
+}
+
+ul li ul li:hover {
+    background-color: var(--color3);
+}
+
+ul li:hover ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 1000px) and (min-width: 750px) {
+    header {
+        width: 500px;
+        height: 250px;
+    }
+    .contenedor {
+        width: 700px;
+        min-width: 0;
+    }
+    ul li {
+        width: 160px;
+        left: calc(50% - 320px)
+    }
+    ul li ul {
+        left: 230px;
+    }
+}
+
+@media (max-width: 750px) {
+    header {
+        width: 350px;
+        height: 175px;
+    }
+    .contenedor {
+        width: 400px;
+        min-width: 0;
+    }
+    nav {
+        background-color: transparent;
+        border: 0;
+        margin-top: 220px;
+    }
+    /* Lo mas destacable de aquí sería esto, se modifica el display
+    de los li para que sean en columna en vez de en línea,
+    se posiciona todo para que estén cohesionados */
+    ul li {
+        display: block;
+        width: 200px;
+        left: 0px;
+        top: -150px;
+    }
+    ul li ul {
+        left: 20px;
+        width: 100px;
+        top: 300px;
+    }
+    ul li ul li {
+        left: 180px;
+        top: -300px;
+    }
+}

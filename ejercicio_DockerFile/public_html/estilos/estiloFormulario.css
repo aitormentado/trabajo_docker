@@ -1,0 +1,500 @@
+/* Titulo "Contacto"*/
+
+.tituloForm {
+    margin: auto;
+    position: relative;
+    width: 300px;
+    text-align: center;
+    height: 60px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    user-select: none;
+    text-shadow: 4px 4px 2px rgba(233, 193, 118, 0.6);
+}
+
+.tituloForm::before,
+.tituloForm::after {
+    content: "";
+    background-color: var(--color3);
+    position: absolute;
+    height: 15px;
+    bottom: -10px;
+    border-radius: 2px;
+}
+
+.tituloForm::before {
+    width: 50px;
+    left: -30px;
+    margin-bottom: -2.5px;
+}
+
+.tituloForm::after {
+    width: 115px;
+    left: -10px;
+    top: -10px;
+    margin-top: -2.5px;
+}
+
+.tituloForm h1 {
+    line-height: 2.5em;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: auto;
+    font-family: fuente-titulo;
+    line-height: 60px;
+    font-size: 2.4em;
+}
+
+.tituloForm h1::before,
+.tituloForm h1::after {
+    content: "";
+    background-color: var(--fondo3);
+    position: absolute;
+    height: 10px;
+    bottom: -10px;
+    border-radius: 2px;
+}
+
+.tituloForm h1::before {
+    width: 300px;
+    left: 30px;
+}
+
+.tituloForm h1::after {
+    width: 200px;
+    left: 120px;
+    top: -10px;
+}
+
+
+/* Contenedor del formulario */
+
+.container {
+    position: relative;
+    width: 800px;
+    height: 930px;
+    top: 18%;
+    left: calc(50% - 400px);
+    display: table;
+    margin-bottom: 40px;
+    border: solid 2px var(--color4);
+    box-shadow: 15px 15px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 8px;
+}
+
+
+/* El formulario está dentro del container */
+
+form {
+    display: table-cell;
+    width: 60%;
+    background-image: url("../images/fondo2.jpg");
+    border-radius: 4px 4px 0 4px;
+}
+
+
+/* es la imagen lateral */
+
+.lateral {
+    display: table-cell;
+    width: 40%;
+    height: 100%;
+    background-image: url("../images/fondo3.jpg");
+    background-size: cover;
+    border-radius: 4px 4px 4px 0;
+}
+
+
+/* otro corazon en CSS, este tiene utilidad, tapa la marca de agua de la imagen... */
+
+.lateral::before,
+.lateral::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 180px;
+    right: 30%;
+    top: -30px;
+    background: var(--color4);
+    border-radius: 100px 100px 0 0;
+    transform: rotate(-45deg);
+}
+
+.lateral::after {
+    right: calc(30% - 44px);
+    transform: rotate(45deg);
+}
+
+input[type=number] {
+    appearance: textfield;
+}
+
+
+/* margenes y les quito el efecto de outline 
+(cuando el elemento tiene el foco) */
+
+input,
+textarea,
+select,
+h4,
+span,
+button {
+    margin: 20px 0 0 20px;
+    outline: none;
+}
+
+
+/* para que los h4 no descuadren la estructura del form */
+
+h4 {
+    display: inline-block;
+}
+
+input,
+textarea,
+select,
+span,
+button {
+    padding: 6px;
+    border-radius: 10px;
+}
+
+
+/* No me gustaba que el textarea se pudiese ajustar */
+
+textarea {
+    resize: none;
+}
+
+label {
+    position: relative;
+    left: -210px;
+    margin-top: 20px;
+    transition: left 1s ease;
+    display: inline-block;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+
+/* es el span del final del form, "campos obligatorios" */
+
+form>span {
+    padding-top: 10px;
+    color: rgb(92, 92, 92);
+    width: 400px;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+}
+
+
+/* para darle espacio a la label de fecha */
+
+label:nth-child(21) {
+    margin-bottom: 20px;
+}
+
+
+/* label de la fecha, que está posicionado de forma diferente */
+
+label:nth-child(24) {
+    position: absolute;
+    left: 16px;
+    top: 350px;
+}
+
+
+/* el icono (font awesome) de la fecha (no se ve hasta que se activa el js) */
+
+input:nth-child(27) {
+    margin-top: 0;
+}
+
+
+/* estilos para labels de los radios y los checkbox */
+
+input[type='radio']+label,
+input[type='checkbox']+label {
+    left: 0;
+    margin-left: 20px;
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    line-height: 10px;
+    cursor: pointer;
+    background-color: var(--color4);
+    border: 2px solid var(--fondo3);
+}
+
+
+/* cuando están checked cambia el color */
+
+input[type=radio]:checked+label,
+input[type=radio]:checked+label,
+input[type=radio]:checked+label,
+input[type=checkbox]:checked+label,
+input[type=checkbox]:checked+label,
+input[type=checkbox]:checked+label,
+input[type=checkbox]:checked+label {
+    background-color: var(--color3);
+}
+
+
+/* oculto los inputs, son accesibles por sus label */
+
+input[type=radio],
+input[type=checkbox] {
+    display: none;
+}
+
+
+/* redondeo la label para diferenciarla del checkbox */
+
+input[type=radio]+label {
+    border-radius: 40px;
+}
+
+
+/* cuando el input tiene el foco, el label se mueve, (transicion) */
+
+input:focus+label {
+    left: 14px;
+}
+
+
+/* estilos del captcha */
+
+.captcha span {
+    padding: 0;
+    border: none;
+    margin: 1px;
+}
+
+.captcha {
+    width: 100%;
+    margin: auto;
+    font-size: 1.2em;
+    position: relative;
+    left: 20px;
+    top: 10px;
+}
+
+.captcha span:nth-child(1) {
+    font-size: 0.8em;
+    border-bottom: solid 2px black;
+    border-radius: 0;
+}
+
+.captcha input {
+    width: 40px;
+    margin: 0;
+}
+
+
+/* el boton de enviar no está dentro del form, asi evito que se envie,
+tuve problemas con él (tema display table) asi que lo hice absolute y lo posicioné */
+
+.enviar {
+    cursor: not-allowed;
+    position: absolute;
+    width: 80px;
+    background-color: var(--color2);
+    border: solid 2px var(--fondo3);
+    font-size: 1.2em;
+    top: 820px;
+    margin-bottom: 40px;
+    left: 150px;
+    opacity: 0.6;
+}
+
+.enviar:hover,
+input[type=radio]+label:hover,
+input[type=checkbox]+label:hover {
+    background-color: var(--color3);
+}
+
+.obligatorio {
+    position: absolute;
+    bottom: 0;
+    color: rgb(107, 107, 107);
+    left: 0;
+}
+
+
+/* estilos para los iconos de fonts awesome */
+
+.far {
+    font-size: 1em;
+    margin-left: 10px;
+}
+
+.far:nth-child(25) {
+    left: 205px;
+    position: relative;
+}
+
+
+/* el input del captcha */
+
+input[type='number'] {
+    font-size: 1em;
+    text-align: center;
+}
+
+
+/* son 3 divs que están dentro del contenido bajo el nav (.explicacion)
+Los 3 tienen una imagen de fondo, con la propiedad clip-path los "recorté" 
+Son los del home pero con diferentes tamaños*/
+
+.bola1,
+.bola2,
+.bola3 {
+    background-color: var(--color2);
+    clip-path: circle(50% at 50% 50%);
+    background-size: cover;
+    position: absolute;
+    width: 220px;
+    height: 220px;
+}
+
+.bola1 {
+    background-image: url("../images/bola2.jpg");
+    top: 750px;
+    left: calc(10% - 110px);
+}
+
+.bola2 {
+    background-image: url("../images/bola.jpg");
+    top: 1050px;
+    right: calc(10% - 110px);
+}
+
+.bola3 {
+    background-image: url("../images/bola3.jpg");
+    top: 1200px;
+    left: calc(10% - 110px);
+}
+
+
+/* intento de hacer la página responsive, lo mas destacable seria:
+en (max-width: 750px) quito la foto del lateral y le doy un width diferente al form*/
+
+@media(max-width: 1300px) and (min-width: 1000px) {
+    .container {
+        margin-top: 250px;
+        height: 1000px;
+    }
+    .bola1,
+    .bola2,
+    .bola3 {
+        width: 200px;
+        height: 200px;
+        top: 750px;
+    }
+    .bola1 {
+        left: calc(20% - 110px);
+    }
+    .bola2 {
+        left: calc(50% - 110px);
+    }
+    .bola3 {
+        left: calc(80% - 110px);
+    }
+    .enviar {
+        top: 890px;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 750px) {
+    .container {
+        left: calc(50% - 360px);
+        margin-top: 250px;
+        width: 720px;
+        height: 1000px;
+    }
+    .bola1,
+    .bola2,
+    .bola3 {
+        width: 200px;
+        height: 200px;
+        top: 600px;
+    }
+    .bola1 {
+        left: calc(20% - 110px);
+    }
+    .bola2 {
+        left: calc(50% - 110px);
+    }
+    .bola3 {
+        left: calc(80% - 110px);
+    }
+    form {
+        width: 65%;
+    }
+    .lateral {
+        width: 35%;
+    }
+    .lateral::after,
+    .lateral::before {
+        width: 100px;
+        height: 150px;
+        right: calc(30% - 44px);
+    }
+    .lateral::after {
+        right: calc(30% - 84px);
+    }
+    .enviar {
+        top: 890px
+    }
+}
+
+@media (max-width: 750px) {
+    .tituloForm {
+        margin-top: 80px;
+    }
+    .bola1,
+    .bola2,
+    .bola3 {
+        width: 120px;
+        height: 120px;
+        top: 745px;
+    }
+    .bola1 {
+        left: calc(20% - 60px);
+    }
+    .bola2 {
+        left: calc(50% - 60px);
+    }
+    .bola3 {
+        left: calc(80% - 60px);
+    }
+    .container {
+        left: calc(50% - 215px);
+        margin-top: 220px;
+        width: 430px;
+        height: 940px;
+        overflow: hidden;
+    }
+    .enviar {
+        top: 833px;
+        left: 130px;
+    }
+    .lateral {
+        display: none;
+    }
+    .lateral::after {
+        display: none;
+    }
+    .lateral::before {
+        display: none;
+    }
+    form {
+        font-size: 0.9em;
+        width: 430px;
+    }
+    label:nth-child(24) {
+        top: 334px;
+    }
+}

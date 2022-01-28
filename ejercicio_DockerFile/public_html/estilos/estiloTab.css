@@ -1,0 +1,474 @@
+/* estilos al titulo de "carta de bebidas" */
+
+h2 {
+    margin: auto;
+    position: relative;
+    width: 300px;
+    text-align: center;
+    height: 60px;
+    margin-top: 50px;
+    user-select: none;
+    line-height: 60px;
+    font-family: fuente-titulo;
+    font-size: 2.5em;
+    text-shadow: 4px 4px 2px rgba(233, 193, 118, 0.6);
+}
+
+h2::before,
+h2::after {
+    content: "";
+    background-color: var(--color3);
+    position: absolute;
+    height: 10px;
+    bottom: -10px;
+    border-radius: 2px;
+}
+
+h2::before {
+    width: 300px;
+    left: 30px;
+    margin-bottom: -2.5px;
+    background-color: var(--fondo3);
+}
+
+h2::after {
+    width: 160px;
+    left: -10px;
+    top: -10px;
+    margin-top: -2.5px;
+}
+
+
+/* En este contenedor está la carta y los radios (con sus label) */
+
+.contenedor {
+    width: 80%;
+    margin: auto;
+    min-width: 1000px;
+    height: 100%;
+    margin-top: -200px;
+}
+
+
+/* Las pestañas (label de radios) */
+
+.pestania {
+    display: block;
+    border: solid var(--fondo3) 3px;
+    width: 130px;
+    height: 50px;
+    line-height: 30px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    top: 280px;
+    left: -15px;
+    background-color: var(--color4);
+    font-size: 1em;
+    border-radius: 30px 0 30px 0;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    user-select: none;
+}
+
+
+/* Puse una pequeña animación en las pestañas (radios - label) */
+
+
+/* da igual que parezca una página de los 90 */
+
+.pestania:hover {
+    animation: rotar 1.5s linear infinite;
+}
+
+@keyframes rotar {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* Aquí empieza la carta */
+
+.contenido {
+    width: 100%;
+    padding: 20px;
+}
+
+.carta {
+    background-color: var(--fondo2);
+    background-image: url("../images/fondo2.jpg");
+    background-size: cover;
+    padding: 40px 0 40px 0;
+    border-radius: 4px;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.75);
+    border: solid 2px var(--fondo3);
+}
+
+
+/* Esto es un corazón hecho con css */
+
+.carta::before,
+.carta::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 180px;
+    right: 12%;
+    top: 750px;
+    background: var(--color4);
+    border-radius: 100px 100px 0 0;
+    transform: rotate(-45deg);
+}
+
+.carta::after {
+    right: calc(12% - 44px);
+    transform: rotate(45deg);
+}
+
+
+/* Los nombres de cada producto */
+
+.titulo {
+    font-family: fuente-titulo;
+    color: var(--color3);
+    height: 70px;
+    width: 400px;
+    line-height: 65px;
+    text-align: center;
+    font-size: 2em;
+    position: relative;
+    left: calc(50% - 200px);
+    background-color: var(--fondo3);
+    border-radius: 50px 0 50px 0;
+    border: 3px solid var(--color2);
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.75);
+    margin-top: 50px;
+    margin-bottom: 40px;
+    user-select: none;
+}
+
+
+/* Lo bajo un poco para que no se pise con las pestañas */
+
+.titulo:first-child {
+    margin-bottom: 70px;
+}
+
+
+/* Esto son las lineas horizontales que hacen de separador entre
+los productos */
+
+.titulo::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    background-color: black;
+    height: 4px;
+    left: -60%;
+    top: 85px;
+    margin: 70px 0 40px 0;
+    border-left: solid 40px var(--color3);
+    border-right: solid 40px var(--color3);
+}
+
+
+/* Las imagenes dan muchos dolores de cabeza en css... */
+
+.imagen {
+    border: 4px solid gold;
+    width: 300px;
+    height: 300px;
+    float: left;
+    border-radius: 8px;
+    background-color: var(--fondo1);
+    background-size: cover;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.75);
+    position: relative;
+    left: 10%;
+    margin: 100px 0 0 0;
+}
+
+
+/* float right, dado que las otras están en left, 
+asi se posiciona de forma alterna */
+
+.imagen:nth-child(5) {
+    float: right;
+    position: relative;
+    left: -10%;
+}
+
+
+/* Esto son las descipciones de los productos*/
+
+.carta p {
+    border: 3px solid var(--color2);
+    display: inline-block;
+    width: 30%;
+    margin: 150px 0 100px 0;
+    padding: 20px;
+    height: 200px;
+    background-color: var(--fondo1);
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.75);
+    left: 30%;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    background-image: url("../images/fondo4.PNG");
+}
+
+
+/* corresponde a la imagen con float right (su pareja horizontalmente) */
+
+.carta p:nth-child(6) {
+    margin: 120px 0 100px 0;
+    left: 10%;
+}
+
+
+/* Es el precio del producto */
+
+.carta p::after {
+    content: 'Precio: 2 €';
+    line-height: 40px;
+    position: absolute;
+    width: 100px;
+    padding-left: 8px;
+    height: 40px;
+    background-color: var(--fondo2);
+    border-radius: 10px;
+    border: solid 2px var(--fondo3);
+    top: 90%;
+    right: 40px;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.75);
+    text-align: center;
+}
+
+
+/* Aquí modifico los precios de los productos, asi no son siempre 2€ */
+
+.carta p:nth-child(3)::after {
+    content: "Precio: 3€";
+}
+
+.carta p:nth-child(9)::after {
+    content: "Precio: 4€";
+}
+
+
+/* Con carta display:none se oculta la carta, 
+hasta que se checkea el radio correspondiente 
+También se ocultan los radios, son accesibles desde sus label*/
+
+.carta {
+    display: none;
+}
+
+.radio {
+    display: none;
+}
+
+
+/* Con esta animación hago que cada vez que se cambia de pestaña se emborrone
+ el contenido de la carta durante un momento*/
+
+.carta p,
+.imagen,
+.titulo {
+    animation: borroso 1s;
+}
+
+@keyframes borroso {
+    0% {
+        filter: blur(10px);
+    }
+    100% {
+        filter: blur(0);
+    }
+}
+
+
+/* Estos selectores son algo complejos (al menos para mi), a cada div con imagen 
+se le aplica una imagen de fondo diferente, según si está el radio checked o no*/
+
+#cafe:checked~.contenido .imagen:nth-child(2) {
+    background-image: url("../images/cafe-espresso.png");
+}
+
+#cafe:checked~.contenido .imagen:nth-child(5) {
+    background-image: url("../images/capuchino.jpg");
+}
+
+#cafe:checked~.contenido .imagen:nth-child(8) {
+    background-image: url("../images/mocca.jpg");
+}
+
+#te:checked~.contenido .imagen:nth-child(2) {
+    background-image: url("../images/te-verde.jpg");
+}
+
+#te:checked~.contenido .imagen:nth-child(5) {
+    background-image: url("../images/te-blanco.jpg");
+}
+
+#te:checked~.contenido .imagen:nth-child(8) {
+    background-image: url("../images/Te-menta.jpg");
+}
+
+#batido:checked~.contenido .imagen:nth-child(2) {
+    background-image: url("../images/mango.jpg");
+}
+
+#batido:checked~.contenido .imagen:nth-child(5) {
+    background-image: url("../images/manzana.jpg");
+}
+
+#batido:checked~.contenido .imagen:nth-child(8) {
+    background-image: url("../images/frutBos.jpg");
+}
+
+#refresco:checked~.contenido .imagen:nth-child(2) {
+    background-image: url("../images/limonada.jpg");
+}
+
+#refresco:checked~.contenido .imagen:nth-child(5) {
+    background-image: url("../images/tehelado.jpg");
+}
+
+#refresco:checked~.contenido .imagen:nth-child(8) {
+    background-image: url("../images/zumo.jpg");
+}
+
+
+/* Esto posiciona los radios verticalmente */
+
+#cafe:checked~.contenido #cafe-carta,
+#te:checked~.contenido #te-carta,
+#batido:checked~.contenido #batido-carta,
+#refresco:checked~.contenido #refresco-carta {
+    display: block;
+}
+
+
+/* Los radios seleccionados cambian de color */
+
+#cafe:checked~.pestanias #cafe-pest,
+#te:checked~.pestanias #te-pest,
+#batido:checked~.pestanias #batido-pest,
+#refresco:checked~.pestanias #refresco-pest {
+    background: var(--color2);
+}
+
+
+/* Media query del tamaño mas pequeño 
+alineo las fotos y los textos verticalmente*/
+
+@media (max-width: 750px) {
+    .contenedor {
+        width: 400px;
+        min-width: 0;
+    }
+    .cafeteria {
+        top: -170px;
+    }
+    h1 {
+        margin-top: 200px;
+    }
+    .carta::after,
+    .carta::before {
+        top: 700px;
+        width: 70px;
+        height: 100px;
+        right: 20%;
+    }
+    .carta::after {
+        right: calc(20% - 22px);
+    }
+    .titulo {
+        width: 120px;
+        left: calc(50% - 70px);
+        font-size: 1.4em;
+    }
+    .imagen {
+        left: 30px;
+    }
+    .imagen:nth-child(5) {
+        left: -30px;
+    }
+    .carta p {
+        width: 300px;
+        margin-top: 50px;
+        left: 30px;
+    }
+    .carta p:nth-child(6) {
+        width: 300px;
+        margin-top: 50px;
+        left: 30px;
+    }
+    .carta p::after {
+        top: 98%;
+    }
+    .titulo::after {
+        width: 200px;
+        left: -80px;
+    }
+}
+
+
+/* El media query del tamaño intermedio (modifica tamaños y posiciona) */
+
+@media (max-width: 1000px) and (min-width: 750px) {
+    .contenedor {
+        width: 700px;
+        min-width: 0;
+    }
+    .titulo {
+        width: 200px;
+        left: calc(50% - 100px);
+    }
+    .titulo::after {
+        left: -130px;
+    }
+    .imagen {
+        width: 200px;
+        height: 200px;
+        left: 30px;
+        margin-right: 40px;
+    }
+    .imagen:nth-child(5) {
+        left: -30px;
+    }
+    .carta p {
+        width: 300px;
+        margin-top: 100px;
+        left: 30px;
+    }
+    .carta p:nth-child(6) {
+        width: 300px;
+        margin-top: 100px;
+        left: 30px;
+    }
+    .carta p::after {
+        top: 93%;
+    }
+    .carta::before,
+    .carta::after {
+        top: 600px;
+    }
+}
